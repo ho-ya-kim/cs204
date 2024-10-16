@@ -8,7 +8,7 @@
 ch1은 그냥 기초  
 논리 연산 관련 내용인데  
 드모르간 증명같은 것도 나올 수 있을지도  
-![dmorgan](./dmorgan_prove.png)
+![dmorgan](./dmorgan_prove.png)  
 그리고 ⊕ 이 기호 xor로 나와있던데 많이 안 쓰는 거라 알아두면 좋을듯 
 
 ---
