@@ -8,7 +8,7 @@
 ch1은 그냥 기초  
 논리 연산 관련 내용인데  
 드모르간 증명같은 것도 나올 수 있을지도  
-![dmorgan](./dmorgan_prove.png)  
+<img src=dmorgan_prove.png width=600>  
 그리고 ⊕ 이 기호 xor로 나와있던데 많이 안 쓰는 거라 알아두면 좋을듯 
 
 ---
@@ -147,11 +147,97 @@ if &nbsp;&nbsp;&nbsp;$ \exist m>n$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.t&nbsp;&nbsp;&
 $\Rightarrow m|b$&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;$m|(a \mod b)+qb=a$&nbsp;&nbsp;&nbsp;so $n=\gcd(a, b)>m$ contradiction
 
 그리고 이것을 확장하면 $gcd(a, b)=sa+tb$ 형식 표현이 가능해지는데 이것이 베조의 등식  
-<img src="gcd_linear.jpg" width="300">
+<img src=gcd_linear.jpg width=500>  
+뒤에 나올 내용에서도 좀 쓰인다.  
 
-$a|bc, \gcd(a, b)=1 \Rightarrow a|c$
+---
+$a|bc, \gcd(a, b)=1 \Rightarrow a|c$  
 a, b로 베조의 등식 사용하면  
 $sac+tbc=c\Rightarrow a(sc+an)=c$  
 $(∵ a|bc\Rightarrow bc=an)$  
 따라서 $a|c$가 된다.  
+
+---
+모듈러 역원(inverse) : 모듈러 곱셈에서 1이 나오도록 하는 수  
+$a$의$\mod m$에 대한 역원은 $\gcd(a, m)=1$일 때 베조의 등식으로 항상 존재한다.  
+유클리디안 알고리즘 반대로 쭉 가면 나온다.  
+<img src=inverse.jpg width=500>  
+
+---
+중국인 나머지 정리  
+서로소 n개 $m_1, m_2, ..., m_n$있을 경우  
+어떤 자연수 N을 $m_i$로 나눈 나머지가 각각 정해졌을 때  
+N을 모든 $m_i$ 곱으로 나눈 나머지가 유일하게 결정된다.  
+아래 증명처럼 계산하면 이론상 존재함은 보일 수 있다. 손계산은 저걸로 하긴 너무 힘들다.  
+<img src=cmt.jpg width=500>  
+
+손으로 할 경우 하나씩 모듈러 적용하면서 찾으면 된다.  
+
+예시  
+$x=2 (\mod 3), x=3 (\mod 5), x=5 (\mod 7)$  
+$x=3a+2$  
+$3a+2=3 (\mod 5)$  
+$a=5b+2 \Rightarrow 15b+8=3 (\mod 5)$  
+$15b+8=5 (\mod 7)$  
+$b=7c+4 \Rightarrow 105c+68=5 (\mod 7)$  
+$\Rightarrow x=105c+68=68 (\mod 105)$  
+
+---
+페르마 소정리  
+$\gcd(a,p)=1 \Rightarrow a^{p-1}=1 (\mod p)$  
+Euler's Theorem만 알아도 증명 가능하기는 함  
+
+Euler's Theorem  
+$\gcd(a, n)=1 \Rightarrow a^{\phi(n)}=1 (\mod n)$  
+n이 소수일 경우 페르마 소정리와 동일하다.  
+
+증명  
+$S=\{x|\gcd(x, n)=1, x<n\} \subset \mathbb{Z_n}$인 S의 원소를 작은 수부터 나열하여 $\{a_i\}$라고 하면  
+$\forall x \in S \Rightarrow ax \mod n \in S (∵gcd(x, n)=1, gcd(a, n)=1)$  
+if $\exist x_1,x_2$ s.t $ax_1=ax_2 (\mod n) \Rightarrow a(x_1-x_2)|n$  
+but $\gcd(a, n)=1$ and $|x_1-x_2|<n$ so $x_1-x_2=0$  
+따라서 a를 각 원소에 곱해도 전체 집합은 동일하다. (f(x)=ax는 S->S로 가는 일대일대응 함수)
+
+$∴\prod_{x \in S}^{} x=\prod_{x \in S}^{} ax=a^{\phi(n)}\prod_{x \in S}^{} x (\mod n)$  
+$\Rightarrow n|(a^{\phi(n)}-1)\prod_{x \in S}^{} x$  
+but $\forall x \in S \gcd(x, n)=1$  
+$∴n|(a^{\phi(n)}-1) \Rightarrow a^{phi(n)}=1 (\mod n)$
+
+---
+페르마 소수 증명  
+$1<\forall a<n-1$  
+$a^{n-1}=1 (\mod n)$일 경우 n은 높은 확률로 소수  
+하지만 561이 반례로 존재  
+
+---
+Primitive Root  
+어떤 n에 대해 k를 0~n-1번 모듈러 제곱을 했을 때 나오는 수가 모두 다를 경우  
+k를 Primitive Root라고 한다.  
+$\phi(n)$의 약수에서 1이 나오는지만 확인하면 된다.  
+
+Primitive Root에서 모든 a에 대한 이산 로그($k^x=a (\mod n)$인 x가 이산 로그다)를 정의 가능하다.  
+영어로는 Discrete Logarithm이라고 한다.  
+
+---
+RSA 암호  
+<img src=RSA.jpg width=600>  
+이거 다 쓰기는 너무 귀찮다... 기여 좀 부탁
+
+---
+디피-헬만 키 교환  
+소수 p와 p의 Primitive Root g를 정해서 공개  
+p이하 자연수 하나씩 적당히 정해서 각각 a, b라고 하면 g^a, g^b mod p 연산을 해서 를 교환한다.  
+교환한 것에 자기가 정한 수를 한번씩 더 제곱해서 p로 나눈 나머지를 구하면 그것을 키로 사용한다.  
+외부에서 알아내려면 이산 로그 문제를 풀어서 a, b중 하나를 알아내야 하는데 그냥 찍어서 검사해야 한다.  
+
+
+## Chapter 5
+
+
+
+
+
+
+
+
 
