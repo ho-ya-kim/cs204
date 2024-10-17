@@ -128,7 +128,8 @@ p is prime and $2^p$ is prime일 경우 $2^p$는 메르센 소수 ㄴ
 ---
 gcd 관련 내용이 있다.  
 소인수분해로 구하는건 쉽고  
-뒤에 귀납적으로 소인수분해 유일하다는 거 나온다.  
+여기서 나오는 소인수분해 유일성도 뒤에 귀납적으로 증명하는거 나온다.  
+
 2는 당연히 2 자신으로 유일하게 소인수분해된다.  
 2 to n에서 유일하게 소인수분해된다고 가정  
 n+1이 2 to n중에 나누어떨어지는 k가 존재한다면  
@@ -137,6 +138,20 @@ k, (n+1)/k는 당연히 유일하게 소인수분해되고
 k가 없으면 그냥 소수라서 자신으로 유일하게 소인수분해된다.  
 
 유클리드 알고리즘 자체는 매우 쉽다.  
-일단 지금은 여기까지만
+$\gcd(a, b)=n$이라고 하면  
+$\gcd(b, a \mod b)=n$이다.  
 
+증명   
+$n|a$ and $n|b \Rightarrow n|a \mod b$는 식 조금만 만들어봐도 된다.  
+if &nbsp;&nbsp;&nbsp;$ \exist m>n$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.t&nbsp;&nbsp;&nbsp;&nbsp;$m|b$&nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp;$m|a \mod b$  
+$\Rightarrow m|b$&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;$m|(a \mod b)+qb=a$&nbsp;&nbsp;&nbsp;so $n=\gcd(a, b)>m$ contradiction
+
+그리고 이것을 확장하면 $gcd(a, b)=sa+tb$ 형식 표현이 가능해지는데 이것이 베조의 등식  
+<img src="gcd_linear.jpg" width="300">
+
+$a|bc, \gcd(a, b)=1 \Rightarrow a|c$
+a, b로 베조의 등식 사용하면  
+$sac+tbc=c\Rightarrow a(sc+an)=c$  
+$(∵ a|bc\Rightarrow bc=an)$  
+따라서 $a|c$가 된다.  
 
