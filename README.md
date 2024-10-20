@@ -9,14 +9,14 @@
 ch1은 그냥 기초  
 논리 연산 관련 내용인데  
 드모르간 증명같은 것도 나올 수 있을지도  
-<img src=dmorgan_prove.png width=600>  
+<img src=images/dmorgan_prove.png width=600>  
 그리고 ⊕ 이 기호 xor로 나와있던데 많이 안 쓰는 거라 알아두면 좋을듯 
 
 ---
 Quantifiers에 대해 배우는데 당연히 교환법칙 성립 안함  
 여러 개 있을 경우 어떻게 된다 설명이 있긴 한데 이건 그냥 생각 좀 하면 된다.  
 슬라이드에 나온 내용은 딱히 없는데 숙제에 나왔던 내용 정도만 알면 될 것 같다.  
-<img src=quantifiers.jpg width=400>  
+<img src=images/quantifiers.jpg width=400>  
 대부분은 논리적으로 생각해서 해결되긴 할텐데 어려운 문제, 원리 있으면 풀 리퀘 보내주세요  
 
 ---
@@ -151,7 +151,7 @@ if &nbsp;&nbsp;&nbsp;$ \exist m>n$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.t&nbsp;&nbsp;&
 $\Rightarrow m|b$&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;$m|(a \mod b)+qb=a$&nbsp;&nbsp;&nbsp;so $n=\gcd(a, b)>m$ contradiction
 
 그리고 이것을 확장하면 $gcd(a, b)=sa+tb$ 형식 표현이 가능해지는데 이것이 베조의 등식  
-<img src=gcd_linear.jpg width=500>  
+<img src=images/gcd_linear.jpg width=500>  
 뒤에 나올 내용에서도 좀 쓰인다.  
 
 ---
@@ -165,7 +165,7 @@ $(∵ a|bc\Rightarrow bc=an)$
 모듈러 역원(inverse) : 모듈러 곱셈에서 1이 나오도록 하는 수  
 $a$의$\mod m$에 대한 역원은 $\gcd(a, m)=1$일 때 베조의 등식으로 항상 존재한다.  
 유클리디안 알고리즘 반대로 쭉 가면 나온다.  
-<img src=inverse.jpg width=500>  
+<img src=images/inverse.jpg width=500>  
 
 ---
 중국인 나머지 정리  
@@ -173,7 +173,7 @@ $a$의$\mod m$에 대한 역원은 $\gcd(a, m)=1$일 때 베조의 등식으로 
 어떤 자연수 N을 $m_i$로 나눈 나머지가 각각 정해졌을 때  
 N을 모든 $m_i$ 곱으로 나눈 나머지가 유일하게 결정된다.  
 아래 증명처럼 계산하면 이론상 존재함은 보일 수 있다. 손계산은 저걸로 하긴 너무 힘들다.  
-<img src=cmt.jpg width=500>  
+<img src=images/cmt.jpg width=500>  
 
 손으로 할 경우 하나씩 모듈러 적용하면서 찾으면 된다.  
 
@@ -224,7 +224,7 @@ Primitive Root에서 모든 a에 대한 이산 로그($k^x=a (\mod n)$인 x가 �
 
 ---
 RSA 암호  
-<img src=RSA.jpg width=600>  
+<img src=images/RSA.jpg width=600>  
 이거 다 쓰기는 너무 귀찮다... 기여 좀 부탁
 
 ---
@@ -257,7 +257,7 @@ Well-Ordered인 집합에서 귀납법이 유효하다.
 ---
 Lame's Theorem  
 유클리디안 알고리즘에서 몫이 항상 1이상이라는 사실을 이용하여 최소 계산 횟수를 찾는다. 
-<img src=lame.jpg width=600>  
+<img src=images/lame.jpg width=600>  
 따라서 $b \rightarrow r_n$ 결과를 얻을 때까지 걸리는 시간을 계산할 수 있다.  
 b 이하의 최대 피보나치 수가 n+1번째라고 할 때 n번 이하의 나머지 연산으로 $r_n$이 나온다.  
 귀납적으로 $b≥f_{n+1}>(\frac{1+\sqrt{5}}{2})^{n-1}$  
