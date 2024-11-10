@@ -73,6 +73,30 @@ D가 멈출 경우 P는 True로 무한루프가 돌아서 모순
 D가 무한루프일 경우 P는 False로 정지하여 모순
 따라서 P같은건 존재하지 않는다.  
 
+
+> 좀 더 쉽게 한다고 하면, ...
+> 
+> ---
+> ```r
+> P(S) = (S, S)  # 복사하는 함수
+> H(S, I) = if S(I) run  >  run
+>           if S(I) stop >  stop
+> N(S) = not S  # S run/stop 바꾸기
+>
+> X(S) = N(H(P(S))) 
+> ```
+> 로 정의하고 **X(X)** 를 생각하면
+> ```r
+> X(X) run
+> > H(X, X) stop
+> > X(X) stop -> CONTRADICTION
+>
+> X(X) stop
+> > H(X, X) run
+> > X(X) run -> CONTRADICTION
+> ```
+> 따라서 이런 **H(S, I)** 는 존재할 수 없다.
+
 ---
 Big-O, Big-$ \Omega $, Big-$ \Theta $가 나온다.  
 Big-O는 미적1에서도 나왔지만 충분히 큰 n에 대해 상수를 곱한 것보다 작으면 된다.  
@@ -88,7 +112,18 @@ Big-$ \Theta $는 2개가 같을 경우 사용한다.
 
 P, NP 문제에 대해서도 다루는데  
 P는 다항 시간 안에 해결 가능한 문제이고 NP는 아닌 문제이다.  
-NP-완전 문제 중 하나라도 P문제이면 P=NP가 되지만 아닐 것 같다. 
+NP-완전 문제 중 하나라도 P문제이면 P=NP가 되지만 아닐 것 같다.
+> 사실은...
+>> **P class (Polynomial)** <br>
+>> TM(Turing Machine)에서 Polynomial Time Algorithm이 존재하는 Class
+>
+> 그리고
+>> **NP class (Non-deterministic Polynomial)** <br>
+>> NTM(Non-deterministic TM)으로 다항 시간 안에 풀리는 문제
+>
+> 여기서 NTM이란, **특정 상황에서 만들어질 수 있는 Action이 유일하지 않은 튜링 머신** 으로, 상황에 따라 여러 가지가 존재하거나 심지어는 없을수도 있다. 즉 **Tree** 같은 구조인데, NP Class는 이런 튜링 머신으로 풀 수 있는 문제를 말한다.
+>
+> 즉, 운이 좋으면 튜링 머신으로 풀 수 있는 문제이고, 반대로 말하면 답이 주어지면 튜링 머신을 통해 다항식 시간 안에 검증이 가능하다.
 
 ## Chapter 4
 여기부터 시작이다.  
@@ -126,7 +161,7 @@ $\ln 2^{1024}=1024\ln 2 = 720$
 대충 50% 넘기는거만 계산해보면 $(1-\frac{1}{\ln 2^{1024}})^{x}=0.5 \Rightarrow x=492$ 정도 나온다.  
 이렇게 뽑은 수가 소수인지 판별하는건 $O(n^{\frac{1}{2}})$ 안에 가능  
 
-p is prime and $2^p$ is prime일 경우 $2^p$는 메르센 소수 ㄴ 
+p is prime and $2^p$ is prime일 경우 $2^p$는 메르센 소수  
 효율적인 판정법이 존재한다고 한다.  
 
 ---
