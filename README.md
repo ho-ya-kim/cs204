@@ -349,13 +349,55 @@ Full Binary Tree도 마찬가지
 이후에는 재귀함수 관련 내용 나오는데 딱히 어렵지 않다.  
 
 
-## Chapter 6
+# FINAL EXAM
 
-그냥 경우의 수 내용  
-비둘기집 좀 나옴  
-그냥 몰라도 됨  
+## Chapter 6 : COUNTING, 경우의 수
 
-## Chapter 7
+### 1. The Basics of Counting : 곱의 법칙, 합의 법칙
+다들 알겠지 뭐...
+
+### 2. The Pigeonhole Principle : 비둘기집의 원리(PHP)
+$k$개 방에 $k+1$마리 비둘기가 들어가면 최소 한 방에는 두마리 이상이 같이 있다.
+
+### 3. Permutations and Combinations : 순열과 조합
+$n$개의 원소 중 $k$개의 원소를 중복하지 않게 순서를 가지고 뽑는 경우의 수
+$$
+{_nP_k}=P(n, k)=\frac{n!}{k!}
+$$
+$n$개의 원소 중 $k$개의 원소를 중복하지 않게 **순서없이** 뽑는 경우의 수
+$$
+{_nC_k} = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+$$
+
+### 4. Binomial Coeffcients and Identities : 이항전개
+이항전개
+$$
+(x+y)^n = \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}
+$$
+파스칼 삼각형 (하키채 공식)
+$$
+\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}
+$$
+$$
+\binom{n+1}{r+1} = \sum_{i=r}^n\binom{i}{r}
+$$
+
+### 5. Generalized Permutations and Conbinations : 중복순열, 중복조합
+$n$개의 원소 중 $k$개의 원소를 **중복을 허용하여** 순서를 가지고 뽑는 경우의 수
+$$
+{_n\Pi_k} = n^k
+$$
+$n$개의 원소 중 $k$개의 원소를 **중복을 허용하여** **순서없이** 뽑는 경우의 수
+$$
+{_nH_k} = \binom{n+k-1}{k}=\binom{n+k-1}{n-1}=\frac{(n+k-1)!}{k!(n-1)!}
+$$
+
+### 6. Generating Permutations and Combinations: 사전순서
+대충 사전순 정렬 이런거같은데 뭔지 잘 모르겠음... 근데 뭐가 많지도 않음
+
+---
+
+## Chapter 7 : Discrete Probability, 이산확률
 
 확률 나옴  
 앞부분은 몰라도 됨  
