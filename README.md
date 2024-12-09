@@ -176,9 +176,15 @@ $$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
 
 > Let $A = \{s \in S : X(s) \geq r\}$. Then,
 >
-> $$ E(X) = \sum_{s\in S}p(s)X(s) $$
-> $$ = \sum_{s\in A}p(s)X(s) + \sum_{s\notin A}p(s)X(s) $$
-> $$ \geq r\sum_{s\in A}p(s) = rp(A) = r\textrm{Pr}(X \geq r)
+> $$ 
+> E(X) = \sum_{s\in S}p(s)X(s) 
+> $$
+> $$ 
+> = \sum_{s\in A}p(s)X(s) + \sum_{s\notin A}p(s)X(s) 
+> $$
+> $$ 
+> \geq r\sum_{s\in A}p(s) = rp(A) = r\textrm{Pr}(X \geq r)
+> $$
 
 ## Chapter 8
 
