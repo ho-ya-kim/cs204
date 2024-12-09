@@ -146,7 +146,7 @@ $$ p(X=r_1 \wedge Y=r_2) = p(X=r_1)p(Y=r_2) \quad \implies \quad E(XY)=E(X)E(Y)$
 
 $$ V(X+Y) = V(X) + V(Y) $$
 
-#### Chebyshev's Inequality: 체비셰프 부등식  
+#### Chebyshev’s Inequality: 체비셰프 부등식  
 
 평균에서 $n\sigma$만큼 떨어질 확률이 $\frac{1}{n^2}$이하다. ($r=n\sigma$, $\sigma^2=V$)
 
@@ -156,9 +156,15 @@ $$ \textrm{Pr}(|X(s)-E(X)| \geq r) \leq \frac{V(X)}{r^2} \quad \iff \quad \textr
 그런데 이것만 계산하면 충분히 보일 수 있다  
 > Let $A = \{s \in S : |X(s)-E(X)| \geq r\}$. Then,
 >
-> $$ V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2 $$
-> $$ = \sum_{s\in A}p(s)(X(s) - E(X))^2 + \sum_{s\notin A}p(s)(X(s) - E(X))^2 $$
-> $$ \geq r^2\sum_{s\in A}p(s) = r^2p(A) = r^2\textrm{Pr}(|X(s)-E(X)| \geq r)
+> $$
+> V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2
+> $$
+> $$
+> = \sum_{s\in A}p(s)(X(s) - E(X))^2 + \sum_{s\notin A}p(s)(X(s) - E(X))^2
+> $$
+> $$
+> \geq r^2\sum_{s\in A}p(s) = r^2p(A) = r^2\textrm{Pr}(|X(s)-E(X)| \geq r)
+> $$
 
 #### Markov's Inequality: 마르코프 부등식
 
@@ -179,7 +185,7 @@ $$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
 점화식 나옴  
 특성방정식 나옴  
 나머지는 식을 적당히 잘 변형시키면 된다  
-이��� 고등학교에서 배운거  
+이건 고등학교에서 배운거  
 
 분할정복  
 포함배제  
@@ -297,7 +303,7 @@ ordered rooted tree : 자식 노드들이 순서가 있는 트리(동형 판정�
     - 리프 노드가 없다고 가정 (모든 노드가 최소 하나의 이웃을 가짐)
     - 임의의 노드에서 시작하여 계속 이웃으로 이동
     - 유한한 노드(n개)를 가진 트리에서 n+1번째 방문은 반드시 이전 노드를 재방문
-    - 이는 회로가 존재한���는 의미이므로 트리의 정의에 모순
+    - 이는 회로가 존재한다는 의미이므로 트리의 정의에 모순
     - 따라서 리프 노드는 반드시 존재
 
 2. **n개의 정점을 가진 트리는 n-1개의 간선을 가진다**
