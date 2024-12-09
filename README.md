@@ -18,7 +18,7 @@ $n$개의 원소 중 $k$개의 원소를 중복하지 않게 **순서없이** �
 $$ {_nC_k} = \binom{n}{k} = \frac{n!}{k!(n-k)!} $$
 
 ### 6.4 Binomial Coeffcients and Identities : 이항전개
-이항전개
+#### 이항전개
 
 $$ (x+y)^n = \sum_{i=0}^n\binom{n}{i}x^iy^{n-i} $$
 
@@ -60,19 +60,23 @@ $$ 0 \leq p(s\in S) \leq 1$$
 
 $$ \sum_{s\in S}p(s) = 1 \qquad \sum_{s \in E}p(s) = p(E)$$
 
-조건부 확률 : $F$가 발생할 때 $E$가 발생할 확률
+#### 이벤트 $E$가 발생할 확률
+
+$$ \textrm{Pr}(E) \equiv \sum_{s \in E}p(s)$$
+
+#### 조건부 확률 : $F$가 발생할 때 $E$가 발생할 확률
 
 $$ p(E|F) = \frac{p(E\cap F)}{p(F)} $$
 
-두 사건 $E$, $F$가 다음을 만족하면 Independence (독립)
+#### 두 사건 $E$, $F$가 다음을 만족하면 Independence (독립)
 
 $$p(E\cap F) = p(E)p(F)$$
 
-Random variable (무작위 변수) : 한 결과를 실수로 대응시킴
+#### Random variable (무작위 변수) : 한 결과를 실수로 대응시킴
 
 $$ X(s) = r $$
 
-Distribution (분포) : random variable $X$와 실수 $r$에 대해 $X=r$일 확률을 $p(X=r)$이라 하면,
+#### Distribution (분포) : random variable $X$와 실수 $r$에 대해 $X=r$일 확률을 $p(X=r)$이라 하면,
 
 $$ (r, p(X=r)) $$
 
@@ -89,7 +93,7 @@ Example : 스팸 메시지 필터 <br/>
 
 $$ p(S|E) = \frac{p(E|S)p(S)}{p(E|S)p(S) + p\left(E|\bar{S}\right)p\left(\bar S\right)} = \frac{p(E|S)}{p(E|S) + p\left(E|\bar{S}\right)} $$
 
-Miller-Rabin Primality Test (밀러-라빈 소수 테스트)
+#### Miller-Rabin Primality Test (밀러-라빈 소수 테스트)
 > 자연수 $n$에 대해, $k$번 검사한다고 가정하자.
 > 
 > $n-1$을 $2^sd$형태 ($d$는 홀수)로 바꾸고, 아래를 $k$번 반복한다.
@@ -105,18 +109,55 @@ Miller-Rabin Primality Test (밀러-라빈 소수 테스트)
 
 ### 7.4 Expected Value and Variance : 기댓값과 분산
 
-이후에는 기댓값, 분산 나옴  
+#### Expected Value: 기댓값 $\implies$ 확률을 고려한 평균
 
-체비셰프 부등식  
-평균에서 $n\sigma$만큼 떨어질 확률이 $\frac{1}{n^2}$이하다  
+$$ E(X) = \sum_{s\in S}p(s)X(s) = \sum_{r\in X(S)}p(X=r)r $$
+
+기댓값은 선형성을 가짐
+
+$$ E(aX+b) = aE(X)+b $$
+
+#### Variance, Standard Deviation: 분산, 표준편차
+
+$$ V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2 \qquad \sigma(X) = \sqrt{V(X)}$$
+
+확통에선 꽤많이 중요한 성질인데 여기서도 많이 쓰이려나
+
+$$ V(X) = E(X^2) - E(X)^2 $$
+
+무작위변수가 독립이라면?
+
+$$ p(X=r_1 \wedge Y=r_2) = p(X=r_1)p(Y=r_2) \quad \implies \quad E(XY)=E(X)E(Y)$$
+
+$$ V(X+Y) = V(X) + V(Y) $$
+
+#### Chebyshev’s Inequality: 체비셰프 부등식  
+
+평균에서 $n\sigma$만큼 떨어질 확률이 $\frac{1}{n^2}$이하다. ($r=n\sigma$, $\sigma^2=V$)
+
+$$ \textrm{Pr}(|X(s)-E(X)| \geq r) \leq \frac{V(X)}{r^2} \quad \iff \quad \textrm{Pr}(|X(s)-E(X)| \geq n\sigma) \leq \frac{1}{n^2}$$
+
 증명은 $n\sigma$만큼 떨어진 집합을 잡고 그것에 속하는 원소들은 편차가 $V(X)n^2$이상이 된다  
 그런데 이것만 계산하면 충분히 보일 수 있다  
-<img src=cheb.jpg width=600>  
+> Let $A = \{s \in S : |X(s)-E(X)| \geq r\}$. Then,
+>
+> $$ V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2 $$
+> $$ = \sum_{s\in A}p(s)(X(s) - E(X))^2 + \sum_{s\notin A}p(s)(X(s) - E(X))^2 $$
+> $$ \geq r^2\sum_{s\in A}p(s) = r^2p(A) = r^2\textrm{Pr}(|X(s)-E(X)| \geq r)
 
-마코브 부등식
+#### Markov's Inequality: 마르코프 부등식
+
 0보다 큰 확률변수에서 값이 커질 확률을 계산한다  
-딱히 뭐가 없다  
-그냥 평균 가지고 연속적인 값으로 확장한 비둘기집 정도 느낌  
+
+$$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
+
+증명은 체비셰프랑 비슷하다.
+
+> Let $A = \{s \in S : X(s) \geq r\}$. Then,
+>
+> $$ E(X) = \sum_{s\in S}p(s)X(s) $$
+> $$ = \sum_{s\in A}p(s)X(s) + \sum_{s\notin A}p(s)X(s) $$
+> $$ \geq r\sum_{s\in A}p(s) = rp(A) = r\textrm{Pr}(X \geq r)
 
 ## Chapter 8
 
