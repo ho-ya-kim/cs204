@@ -100,7 +100,7 @@ $$ p(S|E) = \frac{p(E|S)p(S)}{p(E|S)p(S) + p\left(E|\bar{S}\right)p\left(\bar S\
 > 
 > 임의의 $a\in \{2, 3, \cdots, n-1\}$, 모든 $r \in \{0, 1, \cdots, s-1\}$에 대해 다음을 검사한다.
 >
-> $$ a^d \mod n \neq 1 \quad \& \quad a^{2^rd} \mod n \neq n-1$$
+> $$ a^d \mod n \neq 1 \quad \text{and} \quad a^{2^rd} \mod n \neq n-1 $$
 >
 > * 위를 만족하면 합성수
 > * 만족하지 못했다면 unknown (합성수, 자연수 둘 다 가능)
@@ -141,9 +141,7 @@ $$ \textrm{Pr}(|X(s)-E(X)| \geq r) \leq \frac{V(X)}{r^2} \quad \iff \quad \textr
 그런데 이것만 계산하면 충분히 보일 수 있다  
 > Let $A = \{s \in S : |X(s)-E(X)| \geq r\}$. Then,
 >
-> $$ V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2 $$
-> $$ = \sum_{s\in A}p(s)(X(s) - E(X))^2 + \sum_{s\notin A}p(s)(X(s) - E(X))^2 $$
-> $$ \geq r^2\sum_{s\in A}p(s) = r^2p(A) = r^2\textrm{Pr}(|X(s)-E(X)| \geq r)
+> $$ V(X) = \sum_{s\in S}p(s)(X(s) - E(X))^2  = \sum_{s\in A}p(s)(X(s) - E(X))^2 + \sum_{s\notin A}p(s)(X(s) - E(X))^2 \geq r^2\sum_{s\in A}p(s) = r^2p(A) = r^2\textrm{Pr}(|X(s)-E(X)| \geq r) $$
 
 #### Markov's Inequality: 마르코프 부등식
 
@@ -155,9 +153,7 @@ $$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
 
 > Let $A = \{s \in S : X(s) \geq r\}$. Then,
 >
-> $$ E(X) = \sum_{s\in S}p(s)X(s) $$
-> $$ = \sum_{s\in A}p(s)X(s) + \sum_{s\notin A}p(s)X(s) $$
-> $$ \geq r\sum_{s\in A}p(s) = rp(A) = r\textrm{Pr}(X \geq r)
+> $$ E(X) = \sum_{s\in S}p(s)X(s) = \sum_{s\in A}p(s)X(s) + \sum_{s\notin A}p(s)X(s) \geq r\sum_{s\in A}p(s) = rp(A) = r\textrm{Pr}(X \geq r) $$
 
 ## Chapter 8
 
