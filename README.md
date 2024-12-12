@@ -190,17 +190,17 @@ $$ T(n) = aT(\frac{n}{b}) + f(n) $$
 
 다음 세 가지 경우로 나뉜다:
 
-1. $f(n) = O(n^{\log_b a - \epsilon})$, $\epsilon > 0$인 경우:
+1. $f(n) = O(n^{\log_b a - \epsilon})$, $\epsilon > 0$인 경우:  
    $$ 
    T(n) = \Theta(n^{\log_b a}) 
    $$
 
-2. $f(n) = \Theta(n^{\log_b a})$인 경우:
+2. $f(n) = \Theta(n^{\log_b a})$인 경우:  
    $$ 
    T(n) = \Theta(n^{\log_b a}\log n) 
    $$
 
-3. $f(n) = \Omega(n^{\log_b a + \epsilon})$, $\epsilon > 0$이고 $af(\frac{n}{b}) \leq cf(n)$, $c < 1$인 경우:
+3. $f(n) = \Omega(n^{\log_b a + \epsilon})$, $\epsilon > 0$이고 $af(\frac{n}{b}) \leq cf(n)$, $c < 1$인 경우:  
    $$ 
    T(n) = \Theta(f(n)) 
    $$
