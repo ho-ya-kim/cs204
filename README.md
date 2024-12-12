@@ -181,6 +181,28 @@ $$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
 이건 고등학교에서 배운거  
 
 분할정복  
+
+### Master Theorem: 마스터 정리
+
+점화식이 다음과 같은 형태일 때:
+$$ T(n) = aT(\frac{n}{b}) + f(n) $$
+여기서 $a \geq 1$, $b > 1$이고 $f(n)$은 양의 함수일 때,
+
+다음 세 가지 경우로 나뉜다:
+
+1. $f(n) = O(n^{\log_b a - \epsilon})$, $\epsilon > 0$인 경우:
+   $$ T(n) = \Theta(n^{\log_b a}) $$
+
+2. $f(n) = \Theta(n^{\log_b a})$인 경우:
+   $$ T(n) = \Theta(n^{\log_b a}\log n) $$
+
+3. $f(n) = \Omega(n^{\log_b a + \epsilon})$, $\epsilon > 0$이고 $af(\frac{n}{b}) \leq cf(n)$, $c < 1$인 경우:
+   $$ T(n) = \Theta(f(n)) $$
+
+이는 분할 정복 알고리즘의 시간 복잡도를 쉽게 계산할 수 있게 해준다.
+
+
+
 포함배제  
 
 ---
