@@ -237,7 +237,7 @@ $\frac {1}{2} (e^{-x}+e^x)e^xe^x=\sum^{∞}_{n=0}\frac {3^n+1}{2}\frac{x^n}{n!}$
 $$
 G(x)=\sum_{i=0}^{∞} \binom{n+i-1}{i}x^i=\frac{1}{(1-x)^n}
 $$  
-이것 말고도 유용한 생성함수들이 더 있다. 
+이것 말고도 유용한 생성함수들이 더 있다.  
 <img src=genfun.png width=500>  
 
 ## Chapter 10
