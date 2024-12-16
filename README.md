@@ -175,11 +175,9 @@ $$ \textrm{Pr}(X\geq r) \leq \frac{E(X)}{r}$$
 
 ## Chapter 8
 
-점화식 나옴  
-특성방정식 나옴  
-나머지는 식을 적당히 잘 변형시키면 된다  
-이건 고등학교에서 배운거  
+### 8.1 Applications of Recurrence Relations
 
+<<<<<<< Updated upstream
 분할정복  
 
 ### Master Theorem: 마스터 정리
@@ -208,6 +206,35 @@ $$ T(n) = \Theta(f(n)) $$
 
 
 포함배제  
+=======
+대충 점화식...
+다 알걸?
+
+### 8.2 Solving Linear Recurrence Relations
+
+여기도 뭐 대충 점화식 푸는 방법들
+
+특성근만 주의하자.
+
+중근이 아니라면
+
+$$ a_n = A\alpha^n + B\beta_n $$
+
+중근이라면
+
+$$ a_n = (A+Bn)\alpha^n $$
+
+### 8.3 Divide-and-Conquer Algorithms and Recurrence Relations
+
+#### Master Theorem (Divide-and-Conquer Algorithms을 더 일반화한 것)
+> let increasing $f$ satisty
+> 
+> $$ f(n) = af(n/b) + cn^d $$
+> 
+> then,
+>
+>$$ \implies f(n) \text{ is } \begin{cases}O(n^d) & (a < b^d) \\ O(n^d\log n) & (a=b^d) \\ O(n^{\log _ba}) & (a > b^d)\end{cases}$$
+>>>>>>> Stashed changes
 
 ---
 생성함수  
