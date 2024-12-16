@@ -197,14 +197,39 @@ $$ a_n = (A+Bn)\alpha^n $$
 ### 8.3 Divide-and-Conquer Algorithms and Recurrence Relations
 
 #### Master Theorem (Divide-and-Conquer Algorithms을 더 일반화한 것)
-> let increasing $f$ satisty
+> Let increasing $f$ satisty
 > 
 > $$ f(n) = af(n/b) + cn^d $$
 > 
-> then,
+> Then,
 >
->$$ \implies f(n) \text{ is } \begin{cases}O(n^d) & (a < b^d) \\ O(n^d\log n) & (a=b^d) \\ O(n^{\log _ba}) & (a > b^d)\end{cases}$$
+>$$ f(n) \text{ is } \begin{cases}O(n^d) & (a < b^d) \\ O(n^d\log n) & (a=b^d) \\ O(n^{\log _ba}) & (a > b^d)\end{cases}$$
+> ___
+> 증명은 다음과 같다. ( **Increase** 함수임에 초점을 맞춰야 한다.)
+> 
+> 1. case of $a=b^d$
+>
+> $$ n = b^k \implies f(b^k) = af(b^{k-1}) + ca^k \implies \frac{f(b^k)}{a^k} = \frac{f(b^{k-1})}{a^{k-1}} + c$$
+>
+> $$ f(b^k) = a^k(ck + f(b^0)) \implies f(n) = n^d(c\log_bn + f(1)) \quad (\text{This is also increasing func})$$
+>
+> $$ n \in (b^{k}, b^{k+1}] \implies f(n) \leq f(b^{k+1}) = (b^{k+1})^d(c(k+1)+f(1)) \leq (bn)^d(c\log(bn) + f(1)) = O(n^d\log n)$$
+>
+> 2. case of $a \neq b^d$
+> 
+> $$n=b^k \implies f(b^k) = af(b^{k-1}) + cb^{kd} \implies \frac{f(b^k)}{b^{kd}} = \frac{a}{b^{d}}\frac{f(b^{k-1})}{b^{(k-1)d}} + c$$
+>
+> Let $X_k = f(b^k)/b^{kd}$
+>
+> $$X_k = \frac{a}{b^d}X_{k-1} + c \implies X_k + \frac{cb^d}{a-b^d} = \frac{a}{b^d}\left(X_{k-1} + \frac{cb^d}{a-b^d}\right) $$
+>
+> $$ X_k = \frac{a^k}{b^{kd}}\left(f(1) + \frac{cb^d}{a-b^d}\right) - \frac{cb^d}{a-b^d} \implies f(n) = a^{\log_bn}f(1) + (a^{\log_bn}-n^d)\frac{cb^d}{a-b^d} $$
+>
+> $$a^{\log_bn} = n^{\log_ba} \implies f(n) \sim C_{onst}(n^{\log_ba} - n^d)\quad (\text{$a$, $b^d$의 크기관계에 따라 둘중 더 큰애 따라감})$$
+>
+> 이하 과정은 생략 ($a=b^d$인 경우와 같다.)
 
+### 8.4 Generating Functions : 생성함수
 ---
 생성함수  
 <img src=genfunc.png width=600>  
